@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Meu Painel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+</head>
+<body>
+    <header class="navbar navbar-expand-sm navbar-light bg-light border">
+        <a class="navbar-brand col-md-3 col-lg-2 mt-1 px-3" href="#"><h4>Meu Painel</h4></a>
+        <div class="container-fluid">
+            <form class="d-flex w-25">
+                <input class="form-control" type="text" placeholder="Buscar">
+            </form>
+            <div class="dropdown px-2">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Olá, User</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li><a class="dropdown-item" href="#">Mensagens</a></li>
+                    <li><a class="dropdown-item" href="#">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse border-end">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item h5">
+                            <a class="nav-link active" aria-current="page" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"></path></svg></span> Home</a>
+                        </li>
+                        <li class="nav-item h5">
+                            <a class="nav-link text-muted" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3.5 3.75a.25.25 0 0 1 .25-.25h13.5a.25.25 0 0 1 .25.25v10a.75.75 0 0 0 1.5 0v-10A1.75 1.75 0 0 0 17.25 2H3.75A1.75 1.75 0 0 0 2 3.75v16.5c0 .966.784 1.75 1.75 1.75h7a.75.75 0 0 0 0-1.5h-7a.25.25 0 0 1-.25-.25V3.75Z"></path><path d="M6.25 7a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm-.75 4.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Zm16.28 4.53a.75.75 0 1 0-1.06-1.06l-4.97 4.97-1.97-1.97a.75.75 0 1 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5.5-5.5Z"></path></svg></span> Ordens</a>
+                        </li>
+                        <li class="nav-item h5">
+                            <a class="nav-link text-muted" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2.75 2h18.5c.966 0 1.75.784 1.75 1.75v3.5A1.75 1.75 0 0 1 21.25 9H2.75A1.75 1.75 0 0 1 1 7.25v-3.5C1 2.784 1.784 2 2.75 2Zm18.5 1.5H2.75a.25.25 0 0 0-.25.25v3.5c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25v-3.5a.25.25 0 0 0-.25-.25ZM2.75 10a.75.75 0 0 1 .75.75v9.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25v-9.5a.75.75 0 0 1 1.5 0v9.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25v-9.5a.75.75 0 0 1 .75-.75Z"></path><path d="M9.75 11.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z"></path></svg></span> Produtos</a>
+                        </li>
+                        <li class="nav-item h5">
+                            <a class="nav-link text-muted" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3.5 8a5.5 5.5 0 1 1 8.596 4.547 9.005 9.005 0 0 1 5.9 8.18.751.751 0 0 1-1.5.045 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.499-.044 9.005 9.005 0 0 1 5.9-8.181A5.496 5.496 0 0 1 3.5 8ZM9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8.29 4c-.148 0-.292.01-.434.03a.75.75 0 1 1-.212-1.484 4.53 4.53 0 0 1 3.38 8.097 6.69 6.69 0 0 1 3.956 6.107.75.75 0 0 1-1.5 0 5.193 5.193 0 0 0-3.696-4.972l-.534-.16v-1.676l.41-.209A3.03 3.03 0 0 0 17.29 8Z"></path></svg></span> Clientes</a>
+                        </li>
+                        <li class="nav-item h5">
+                            <a class="nav-link text-muted" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2.5 2.75a.75.75 0 0 0-1.5 0v18.5c0 .414.336.75.75.75H20a.75.75 0 0 0 0-1.5H2.5V2.75Z"></path><path d="M22.28 7.78a.75.75 0 0 0-1.06-1.06l-5.72 5.72-3.72-3.72a.75.75 0 0 0-1.06 0l-6 6a.75.75 0 1 0 1.06 1.06l5.47-5.47 3.72 3.72a.75.75 0 0 0 1.06 0l6.25-6.25Z"></path></svg></span> Relatórios</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="col-12 py-3">
+                    <ul class="nav bg-light rounded">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Início</a>
+                        </li>
+                        <small class="mt-2 text-muted">/</small>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Painel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h2>Painel</h2>
+                    <p>Essa é a página inicial de um painel administrativo.</p>
+                </div>
+                <div class="row py-3">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-header"><h5>Clientes</h5></div>
+                            <div class="card-body">
+                                <h5>345 mil</h5>
+                                <p>Abril/2023 - Junho/2023, Brasília-DF</p>
+                                <h6 class="text-success">18,2% de aumento no período</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-header"><h5>Receita</h5></div>
+                            <div class="card-body">
+                                <h5>R$ 2,4 milhões</h5>
+                                <p>Abril/2023 - Junho/2023, Brasília-DF</p>
+                                <h6 class="text-success">4,6% de aumento no período</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-header"><h5>Compras</h5></div>
+                            <div class="card-body">
+                                <h5>42 unidades</h5>
+                                <p>Abril/2023 - Junho/2023, Brasília-DF</p>
+                                <h6 class="text-danger">2,6% de décrescimo no período</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-header"><h5>Tráfego</h5></div>
+                            <div class="card-body">
+                                <h5>64 mil</h5>
+                                <p>Abril/2023 - Junho/2023, Brasília-DF</p>
+                                <h6 class="text-success">2,5% de aumento no período</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header"><h5>Tráfego dos últimos 6 meses</h5></div>
+                            <div class="card-body">
+                                <canvas id="grafico"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header"><h5>Últimas Transações</h5></div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Ordem</th>
+                                            <th>Produto</th>
+                                            <th>Cliente</th>
+                                            <th>Total</th>
+                                            <th>Data</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <th>17371705</th>
+                                        <td>Produto 1</td>
+                                        <td>maria@email.com</td>
+                                        <td>R$ 61,11</td>
+                                        <td>20/06/2023</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">Detalhar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>17370540</th>
+                                        <td>Produto 2</td>
+                                        <td>jose@email.com</td>
+                                        <td>R$ 53,11</td>
+                                        <td>20/06/2023</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">Detalhar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>17371705</th>
+                                        <td>Produto 1</td>
+                                        <td>maria@email.com</td>
+                                        <td>R$ 61,11</td>
+                                        <td>20/06/2023</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">Detalhar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>17370540</th>
+                                        <td>Produto 2</td>
+                                        <td>jose@email.com</td>
+                                        <td>R$ 53,11</td>
+                                        <td>20/06/2023</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary">Detalhar</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-light w-100">Ver todas as transações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="row pt-5 mt-5">
+                        <div class="col d-flex flex-row">
+                            <h6 class="mt-3">© 2023</h6>
+                        </div>
+                        <div class="col d-flex flex-row-reverse">
+                            <ul class="nav mt-1">
+                                <li class="nav-item">
+                                <a class="nav-link text-muted" href="#">Política de Privacidade</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link text-muted" href="#">Termos de Uso</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link text-muted" href="#">Contato</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+</body>
+<script>
+    new Chart(document.getElementById("grafico"),
+        {"type":"line",
+        "data":{"labels":["Jan/2023","Fev/2023","Mar/2023","Abr/2023","Mai/2023","Jun/2023"],
+        "datasets":[{"label":"Tráfego",
+        "data":[21000,25000,19000,33000,56000,60000],
+        "fill":true,
+        "borderColor":
+            "rgb(222, 62, 74)",
+        "backgroundColor":
+            "rgb(222, 62, 74, 0.5)",
+        "lineTension":0.1}]},
+        "options":{}});
+</script>
+</html>
